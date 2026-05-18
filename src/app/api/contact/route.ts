@@ -3,10 +3,9 @@ import { NextResponse } from 'next/server';
 
 // You will need to add RESEND_API_KEY to your .env.local file
 // Get your free API key at https://resend.com
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
     try {
+        const resend = new Resend(process.env.RESEND_API_KEY);
         const body = await request.json();
         const { type, name, phone, concern, message } = body;
 
