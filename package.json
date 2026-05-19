@@ -6,7 +6,8 @@
     "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate": "node scripts/generate-blog.mjs"
   },
   "dependencies": {
     "next": "16.1.6",

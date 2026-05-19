@@ -340,6 +340,50 @@ section {
   }
 }
 
+/* Desktop nav visible, mobile menu button hidden on desktop */
+.desktop-nav {
+  display: flex !important;
+}
+
+.mobile-menu-btn {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+}
+
+/* About page grid */
+.about-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Footer 4-column → responsive */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* Header Specific Responsive Fixes */
 @media (max-width: 480px) {
   .header-brand {
