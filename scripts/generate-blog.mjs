@@ -8,6 +8,24 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
+
+// Load environment variables from .env.local manually for raw Node script
+const envPath = join(ROOT, '.env.local');
+if (existsSync(envPath)) {
+    const envContent = readFileSync(envPath, 'utf-8');
+    envContent.split(/\r?\n/).forEach(line => {
+        const match = line.match(/^([^=]+)=(.*)$/);
+        if (match) {
+            const key = match[1].trim();
+            let value = match[2].trim();
+            // Remove surrounding quotes if they exist
+            if (value.startsWith('"') && value.endsWith('"')) value = value.slice(1, -1);
+            if (value.startsWith("'") && value.endsWith("'")) value = value.slice(1, -1);
+            process.env[key] = value;
+        }
+    });
+}
+
 const CONTENT_DIR = join(ROOT, 'content', 'blog');
 const SETTINGS_PATH = join(ROOT, 'blog-settings.json');
 
@@ -95,7 +113,7 @@ RESPOND IN THIS EXACT JSON FORMAT (no markdown, just raw JSON):
 
     console.log(`🤖 Generating article about: "${topic}"`);
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
