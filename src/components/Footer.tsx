@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
@@ -44,11 +45,11 @@ export default function Footer() {
                     <div>
                         <h4 style={{ color: 'var(--white)', marginBottom: '24px' }}>{t.footer.quick_links}</h4>
                         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                            <li><a href="#why-choose" style={{ opacity: 0.8 }}>{t.why_choose.title}</a></li>
-                            <li><a href="#specialities" style={{ opacity: 0.8 }}>{t.specialities.title}</a></li>
-                            <li><a href="#process" style={{ opacity: 0.8 }}>{t.process.title}</a></li>
-                            <li><a href="#location" style={{ opacity: 0.8 }}>{t.localseo.title}</a></li>
-                            <li><a href="#faq" style={{ opacity: 0.8 }}>{language === 'ml' ? 'പതിവ് ചോദ്യങ്ങൾ' : 'FAQs'}</a></li>
+                            <li><Link href="/#why-choose" style={{ opacity: 0.8, textDecoration: 'none', color: 'inherit' }}>{t.why_choose.title}</Link></li>
+                            <li><Link href="/#specialities" style={{ opacity: 0.8, textDecoration: 'none', color: 'inherit' }}>{t.specialities.title}</Link></li>
+                            <li><Link href="/#process" style={{ opacity: 0.8, textDecoration: 'none', color: 'inherit' }}>{t.process.title}</Link></li>
+                            <li><Link href="/#location" style={{ opacity: 0.8, textDecoration: 'none', color: 'inherit' }}>{t.localseo.title}</Link></li>
+                            <li><Link href="/#faq" style={{ opacity: 0.8, textDecoration: 'none', color: 'inherit' }}>{language === 'ml' ? 'പതിവ് ചോദ്യങ്ങൾ' : 'FAQs'}</Link></li>
                         </ul>
                     </div>
 
