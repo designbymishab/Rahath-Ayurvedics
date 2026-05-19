@@ -68,8 +68,9 @@ export default function EnquiryForm() {
                     <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '24px' }}>
                         <div className="enquiry-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
                             <div>
-                                <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>{t.enquiry.name_label}</label>
+                                <label htmlFor="name" style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>{t.enquiry.name_label}</label>
                                 <input
+                                    id="name"
                                     type="text"
                                     name="name"
                                     required
@@ -87,8 +88,9 @@ export default function EnquiryForm() {
                                 />
                             </div>
                             <div>
-                                <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>{t.enquiry.phone_label}</label>
+                                <label htmlFor="phone" style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>{t.enquiry.phone_label}</label>
                                 <input
+                                    id="phone"
                                     type="tel"
                                     name="phone"
                                     required
@@ -108,8 +110,9 @@ export default function EnquiryForm() {
                         </div>
 
                         <div>
-                            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>{t.enquiry.concern_label}</label>
+                            <label htmlFor="concern" style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>{t.enquiry.concern_label}</label>
                             <select
+                                id="concern"
                                 name="concern"
                                 required
                                 value={formData.concern}
@@ -132,8 +135,9 @@ export default function EnquiryForm() {
                         </div>
 
                         <div>
-                            <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>{language === 'ml' ? 'സന്ദേശം' : 'Message'}</label>
+                            <label htmlFor="message" style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>{language === 'ml' ? 'സന്ദേശം' : 'Message'}</label>
                             <textarea
+                                id="message"
                                 name="message"
                                 rows={4}
                                 value={formData.message}
