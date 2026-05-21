@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import WhyChoose from '@/components/WhyChoose';
 import Specialities from '@/components/Specialities';
+import GoogleReviews from '@/components/GoogleReviews';
 import Process from '@/components/Process';
 import LocalSEO from '@/components/LocalSEO';
 import FAQSection from '@/components/FAQSection';
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <WhyChoose />
       <Specialities />
+      <GoogleReviews />
       <Process />
       <LocalSEO />
       <FAQSection />

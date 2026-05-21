@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { Analytics } from "@vercel/analytics/next";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -33,6 +34,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://rahathayurvedic.vercel.app",
+    languages: {
+      "en-IN": "https://rahathayurvedic.vercel.app",
+      "ml-IN": "https://rahathayurvedic.vercel.app",
+    },
   },
   openGraph: {
     type: "website",
@@ -86,6 +91,10 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        {/* hreflang tags for multilingual SEO */}
+        <link rel="alternate" hrefLang="en-IN" href="https://rahathayurvedic.vercel.app" />
+        <link rel="alternate" hrefLang="ml-IN" href="https://rahathayurvedic.vercel.app" />
+        <link rel="alternate" hrefLang="x-default" href="https://rahathayurvedic.vercel.app" />
         {/* Geo meta tags for Local SEO */}
         <meta name="geo.region" content="IN-KL" />
         <meta name="geo.placename" content="Mannarkkad, Palakkad" />
@@ -95,6 +104,7 @@ export default function RootLayout({
       <body className={outfit.className}>
         <SchemaMarkup />
         <LanguageProvider>{children}</LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );

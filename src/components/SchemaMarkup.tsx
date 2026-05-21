@@ -27,7 +27,7 @@ export default function SchemaMarkup() {
             "latitude": 10.9947286,
             "longitude": 76.4651452
         },
-        "hasMap": "https://www.google.com/maps/place/Rahath+Ayurvedic/@10.9947286,76.4651452,17z",
+        "hasMap": "https://maps.app.goo.gl/YaNgmidad29hiEp8A",
         "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": [
@@ -66,11 +66,89 @@ export default function SchemaMarkup() {
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.8",
-            "reviewCount": "120",
+            "reviewCount": "47",
             "bestRating": "5",
             "worstRating": "1"
         }
     };
+
+    const productSchemas = [
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Raw Herbal Medicines",
+            "description": "Authentic dried, cut & powdered raw herbal medicines prepared traditionally. Over 100 varieties of single herbs and traditional combinations without artificial additives.",
+            "brand": { "@type": "Brand", "name": "Rahath Ayurvedic" },
+            "category": "Ayurvedic Herbal Medicines",
+            "url": "https://rahathayurvedic.vercel.app/specialities/raw-herbal-medicines",
+            "image": "https://rahathayurvedic.vercel.app/images/speciality-herbal1.webp",
+            "offers": {
+                "@type": "Offer",
+                "availability": "https://schema.org/InStock",
+                "priceCurrency": "INR",
+                "price": "0",
+                "priceValidUntil": "2027-12-31",
+                "url": "https://rahathayurvedic.vercel.app/specialities/raw-herbal-medicines",
+                "seller": { "@type": "Organization", "name": "Rahath Ayurvedic" }
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "23",
+                "bestRating": "5"
+            }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Piles Care Herbal Support",
+            "description": "Traditional Ayurvedic herbal formulations for piles care support. Time-tested Kerala ingredients for natural comfort and relief.",
+            "brand": { "@type": "Brand", "name": "Rahath Ayurvedic" },
+            "category": "Ayurvedic Herbal Support",
+            "url": "https://rahathayurvedic.vercel.app/specialities/piles-care",
+            "image": "https://rahathayurvedic.vercel.app/images/speciality-piles1.webp",
+            "offers": {
+                "@type": "Offer",
+                "availability": "https://schema.org/InStock",
+                "priceCurrency": "INR",
+                "price": "0",
+                "priceValidUntil": "2027-12-31",
+                "url": "https://rahathayurvedic.vercel.app/specialities/piles-care",
+                "seller": { "@type": "Organization", "name": "Rahath Ayurvedic" }
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.7",
+                "reviewCount": "15",
+                "bestRating": "5"
+            }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Postnatal Care Herbal Kit",
+            "description": "Curated herbal sets for post-delivery wellness following traditional Kerala Prasava Raksha practices. Supports recovery, lactation, and overall well-being.",
+            "brand": { "@type": "Brand", "name": "Rahath Ayurvedic" },
+            "category": "Postnatal Herbal Care",
+            "url": "https://rahathayurvedic.vercel.app/specialities/postnatal-care",
+            "image": "https://rahathayurvedic.vercel.app/images/speciality-prasava1.webp",
+            "offers": {
+                "@type": "Offer",
+                "availability": "https://schema.org/InStock",
+                "priceCurrency": "INR",
+                "price": "0",
+                "priceValidUntil": "2027-12-31",
+                "url": "https://rahathayurvedic.vercel.app/specialities/postnatal-care",
+                "seller": { "@type": "Organization", "name": "Rahath Ayurvedic" }
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "9",
+                "bestRating": "5"
+            }
+        }
+    ];
 
     const faqSchema = {
         "@context": "https://schema.org",
@@ -152,6 +230,15 @@ export default function SchemaMarkup() {
                     __html: JSON.stringify(localBusinessSchema)
                 }}
             />
+            {productSchemas.map((schema, i) => (
+                <script
+                    key={`product-${i}`}
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(schema)
+                    }}
+                />
+            ))}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{

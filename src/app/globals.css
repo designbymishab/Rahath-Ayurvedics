@@ -307,6 +307,10 @@ section {
     justify-content: center;
   }
 
+  .quick-concerns {
+    justify-content: center;
+  }
+
   .hero-text {
     margin-left: auto;
     margin-right: auto;
@@ -331,7 +335,7 @@ section {
   }
 
   .form-card {
-    padding: 32px !important;
+    padding: 24px !important;
   }
 
   .footer-grid {
@@ -367,6 +371,7 @@ section {
 @media (max-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr !important;
+    gap: 32px !important;
   }
 }
 

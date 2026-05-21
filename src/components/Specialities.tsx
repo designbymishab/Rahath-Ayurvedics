@@ -59,7 +59,7 @@ export default function Specialities() {
                             boxShadow: 'var(--shadow-sm)'
                         }}>
                             <div style={{ width: '100%', aspectRatio: '16/10', overflow: 'hidden', position: 'relative' }}>
-                                <Image src={spec.image} alt={spec.title} fill sizes="(max-width: 640px) 100vw, (max-width: 992px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
+                                <Image src={spec.image} alt={`${spec.title} - Rahath Ayurvedic Mannarkkad | റാഹത്ത് ആയുർവേദിക്`} fill sizes="(max-width: 640px) 100vw, (max-width: 992px) 50vw, 33vw" style={{ objectFit: 'cover' }} loading="lazy" />
                             </div>
                             <div style={{ padding: '32px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                                 <h3 style={{ fontSize: '1.5rem', marginBottom: '8px', color: 'var(--primary-dark)' }}>{spec.title}</h3>

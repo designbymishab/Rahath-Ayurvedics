@@ -58,5 +58,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.6,
         },
+        {
+            url: `${baseUrl}/blog/ayurvedic-herbs-mannarkkad-introduction`,
+            lastModified: new Date('2026-05-18'),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/postnatal-care-kerala-traditional-medicine`,
+            lastModified: new Date('2026-05-15'),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${baseUrl}/blog/piles-care-ayurvedic-support-mannarkkad`,
+            lastModified: new Date('2026-05-12'),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
     ];
 }

@@ -20,21 +20,11 @@ export default function CallBackPopup() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ type: 'callback', phone }),
-            });
+        const waText = `Hello Rahath Ayurvedic, please call me back at ${phone}`;
+        const waUrl = `https://wa.me/919605424292?text=${encodeURIComponent(waText)}`;
+        window.open(waUrl, '_blank');
 
-            if (response.ok) {
-                alert(language === 'ml' ? 'വിജയിച്ചു! ഞങ്ങൾ നിങ്ങളെ ഉടൻ വിളിക്കും.' : 'Success! We will call you soon.');
-            } else {
-                alert(language === 'ml' ? 'അപേക്ഷ അയക്കാൻ കഴിഞ്ഞില്ല. നേരിട്ട് വിളിക്കുക.' : 'Failed to send request. Please try calling us directly.');
-            }
-        } catch (error) {
-            alert(language === 'ml' ? 'കണക്ഷനിൽ തടസ്സം നേരിട്ടു.' : 'Error sending request. Please check your connection.');
-        }
+        alert(language === 'ml' ? 'വിജയിച്ചു! ഞങ്ങൾ നിങ്ങളെ ഉടൻ വിളിക്കും.' : 'Success! We will call you soon.');
 
         setPhone('');
         setIsMinimized(true);

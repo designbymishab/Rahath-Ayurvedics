@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
+import QuickConcernLinks from './QuickConcernLinks';
 
 export default function Hero() {
     const { t, language } = useLanguage();
@@ -60,6 +61,8 @@ export default function Hero() {
                             {t.hero.cta_whatsapp}
                         </a>
                     </div>
+                    {/* Quick Concern Links */}
+                    <QuickConcernLinks />
                 </div>
                 <div className="hero-image" style={{
                     position: 'relative',
@@ -75,7 +78,7 @@ export default function Hero() {
                     }}>
                         <Image
                             src="/images/hero2.webp"
-                            alt="Traditional Ayurvedic herbal medicine preparation at Rahath Ayurvedic Mannarkkad"
+                            alt="Traditional Ayurvedic herbal medicine preparation at Rahath Ayurvedic Mannarkkad | മണ്ണാർക്കാട്ടെ പരമ്പരാഗത ആയുർവേദ മരുന്ന് തയ്യാറെടുപ്പ്"
                             fill
                             priority
                             sizes="(max-width: 992px) 100vw, 50vw"
@@ -84,12 +87,12 @@ export default function Hero() {
                     </div>
                     <div style={{
                         position: 'absolute',
-                        bottom: '24px',
-                        left: '24px',
-                        right: '24px',
+                        bottom: 'clamp(12px, 4vw, 24px)',
+                        left: 'clamp(12px, 4vw, 24px)',
+                        right: 'clamp(12px, 4vw, 24px)',
                         background: 'rgba(255, 255, 255, 0.9)',
                         backdropFilter: 'blur(8px)',
-                        padding: '20px',
+                        padding: 'clamp(12px, 4vw, 20px)',
                         borderRadius: 'var(--radius-md)',
                         display: 'flex',
                         alignItems: 'center',

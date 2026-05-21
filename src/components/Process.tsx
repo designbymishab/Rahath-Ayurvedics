@@ -72,7 +72,7 @@ export default function Process() {
                                 marginBottom: '20px',
                                 boxShadow: 'var(--shadow-sm)'
                             }}>
-                                <Image src={step.image} alt={step.title} fill sizes="(max-width: 640px) 100vw, (max-width: 992px) 50vw, 25vw" style={{ objectFit: 'cover' }} />
+                                <Image src={step.image} alt={`${step.title} - Traditional herbal preparation | പരമ്പരാഗത മരുന്ന് തയ്യാറെടുപ്പ്`} fill sizes="(max-width: 640px) 100vw, (max-width: 992px) 50vw, 25vw" style={{ objectFit: 'cover' }} loading="lazy" />
                             </div>
                             <div style={{
                                 position: 'absolute',
