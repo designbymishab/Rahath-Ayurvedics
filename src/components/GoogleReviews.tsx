@@ -175,7 +175,7 @@ export default function GoogleReviews() {
 
                 <div className="text-center">
                     <a
-                        href="https://maps.app.goo.gl/YaNgmidad29hiEp8A"
+                        href="https://maps.app.goo.gl/93KHWLBe3u7FNaYX9"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-secondary"
