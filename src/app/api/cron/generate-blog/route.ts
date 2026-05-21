@@ -162,18 +162,46 @@ RESPOND IN THIS EXACT JSON FORMAT (no markdown, just raw JSON):
 
         const aiData = await aiRes.json();
         let contentRaw = aiData.candidates[0].content.parts[0].text.trim();
-        if (contentRaw.startsWith('```')) {
-            contentRaw = contentRaw.replace(/^```json?\n?/, '').replace(/\n?```$/, '');
+
+        const match = contentRaw.match(/```(?:json)?\n?([\s\S]*?)```/);
+        if (match) {
+            contentRaw = match[1].trim();
+        } else if (contentRaw.startsWith('{')) {
+            // Already raw JSON
+        } else {
+            // Attempt to find first { and last }
+            const start = contentRaw.indexOf('{');
+            const end = contentRaw.lastIndexOf('}');
+            if (start !== -1 && end !== -1) {
+                contentRaw = contentRaw.substring(start, end + 1);
+            }
         }
 
         const generated = JSON.parse(contentRaw);
         const slug = slugify(generated.title);
+        // --- Generate AI Image ---
+        const imagePrompt = `A professional, high quality, photorealistic photograph representing ${topic}, traditional ayurvedic medicine, warm lighting, natural, Kerala style`;
+        const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=800&height=500&nologo=true`;
+        
+        let imagePath = selectCoverImage(topic); // Fallback
+        let imageBase64 = null;
+        try {
+            const imgRes = await fetch(imageUrl);
+            if (imgRes.ok) {
+                const arrayBuffer = await imgRes.arrayBuffer();
+                imageBase64 = Buffer.from(arrayBuffer).toString('base64');
+                imagePath = `/images/blog/${slug}.jpg`;
+            }
+        } catch (e) {
+            console.error("Image generation failed, using fallback", e);
+        }
+
         const today = new Date().toISOString().split('T')[0];
 
         const postData = {
             slug,
             topic,
-            image: selectCoverImage(topic),
+            image: imagePath,
             date: today,
             readTime: generated.readTime || 6,
             en: {
@@ -192,7 +220,25 @@ RESPOND IN THIS EXACT JSON FORMAT (no markdown, just raw JSON):
             generatedAt: new Date().toISOString(),
         };
 
-        // --- Push to GitHub ---
+        // --- Push Image to GitHub ---
+        if (imageBase64) {
+            try {
+                await fetch(`https://api.github.com/repos/${githubRepo}/contents/public/images/blog/${slug}.jpg`, {
+                    method: 'PUT',
+                    headers: githubHeaders,
+                    body: JSON.stringify({
+                        message: `chore(blog): add auto-generated image for ${slug}`,
+                        content: imageBase64,
+                        branch: 'main'
+                    })
+                });
+            } catch (e) {
+                console.error("Failed to push image", e);
+                postData.image = selectCoverImage(topic); // revert to fallback
+            }
+        }
+
+        // --- Push JSON to GitHub ---
         const fileContentBase64 = Buffer.from(JSON.stringify(postData, null, 2)).toString('base64');
         const putRes = await fetch(`https://api.github.com/repos/${githubRepo}/contents/content/blog/${slug}.json`, {
             method: 'PUT',
