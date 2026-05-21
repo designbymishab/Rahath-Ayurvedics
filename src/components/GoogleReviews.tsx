@@ -13,58 +13,58 @@ interface Review {
 
 const reviews: Review[] = [
     {
-        name: 'Fathima K.',
-        rating: 5,
-        date: { en: '3 months ago', ml: '3 മാസം മുമ്പ്' },
-        text: {
-            en: 'Excellent quality herbal medicines! I have been buying postnatal care herbs from Rahath for my daughter. Very clean preparation and the staff is extremely helpful. Highly recommended for anyone in Mannarkkad.',
-            ml: 'മികച്ച ഗുണനിലവാരമുള്ള പച്ചമരുന്നുകൾ! എന്റെ മകൾക്കുള്ള പ്രസവാനന്തര മരുന്നുകൾ ഞാൻ റാഹത്തിൽ നിന്നാണ് വാങ്ങുന്നത്. വളരെ ശുദ്ധമായ തയ്യാറെടുപ്പ്, ജീവനക്കാർ വളരെ സഹായകരമാണ്.'
-        },
-        initial: 'F',
-        color: '#E8F5E9'
-    },
-    {
-        name: 'Rajan P.',
+        name: 'Mohammed Faizal',
         rating: 5,
         date: { en: '2 months ago', ml: '2 മാസം മുമ്പ്' },
         text: {
-            en: 'Best Ayurvedic shop in Palakkad district. Their piles care herbal support really helped me. Traditional preparation without any chemicals. The owner is very knowledgeable about herbs.',
-            ml: 'പാലക്കാട് ജില്ലയിലെ ഏറ്റവും മികച്ച ആയുർവേദ കട. അവരുടെ പൈൽസ് കെയർ ഹെർബൽ സപ്പോർട്ട് എനിക്ക് ശരിക്കും സഹായകരമായി. രാസവസ്തുക്കൾ ഇല്ലാതെ പരമ്പരാഗത തയ്യാറെടുപ്പ്.'
+            en: 'I had a wonderful experience at Rahath Ayurvedic shop in Mannarkkad. I was impressed by how well organized and hygienic the shop was. The staff were very knowledgeable about the products and took the time to understand my health concerns before recommending anything.',
+            ml: 'മണ്ണാർക്കാടുള്ള റാഹത്ത് ആയുർവേദിക് ഷോപ്പിൽ എനിക്ക് മികച്ചൊരു അനുഭവം ഉണ്ടായി. കട എത്രത്തോളം ചിട്ടയുള്ളതും വൃത്തിയുള്ളതുമാണെന്നത് എന്നെ ആകർഷിച്ചു. ഉൽപ്പന്നങ്ങളെക്കുറിച്ച് ജീവനക്കാർക്ക് നല്ല അറിവുണ്ടായിരുന്നു, എന്തെങ്കിലും ശുപാർശ ചെയ്യുന്നതിന് മുൻപ് എന്റെ ആരോഗ്യ പ്രശ്നങ്ങൾ മനസ്സിലാക്കാൻ അവർ സമയം കണ്ടെത്തി.'
         },
-        initial: 'R',
+        initial: 'M',
+        color: '#E8F5E9'
+    },
+    {
+        name: 'malabardrugs mkd',
+        rating: 5,
+        date: { en: '2 months ago', ml: '2 മാസം മുമ്പ്' },
+        text: {
+            en: 'Good option in Mannarkkad for ayurvedic raw materials',
+            ml: 'ആയുർവേദ പച്ചമരുന്നുകൾക്ക് മണ്ണാർക്കാട്ടെ നല്ലൊരു ഓപ്ഷൻ'
+        },
+        initial: 'm',
         color: '#FFF3E0'
     },
     {
-        name: 'Sreeja M.',
+        name: 'mp kavanoor',
         rating: 5,
-        date: { en: '1 month ago', ml: '1 മാസം മുമ്പ്' },
+        date: { en: '3 weeks ago', ml: '3 ആഴ്ച മുമ്പ്' },
         text: {
-            en: 'I was looking for authentic raw herbs and someone recommended Rahath near Hospital Junction. Their collection is amazing and everything is freshly prepared. Will definitely come back!',
-            ml: 'ആധികാരികമായ പച്ചമരുന്നുകൾ തേടി നടക്കുമ്പോഴാണ് ഹോസ്പിറ്റൽ ജംഗ്ഷനിലെ റാഹത്ത് ആരോ പറഞ്ഞത്. അവരുടെ ശേഖരം അതിശയകരമാണ്, എല്ലാം പുതുതായി തയ്യാറാക്കിയതാണ്.'
+            en: 'This Ayurvedic raw medicine shop near Hospital Junction, Mannarkkad is highly recommended. They give precise instructions about the medicines we need. It is a very good shop for those who want good quality medicines.',
+            ml: 'മണ്ണാർക്കാട് ആശുപത്രിപ്പടിയിലെ ഈ ആയുർവേദ പച്ച മരുന്ന് കട എടുത്തു പറയേണ്ട ഒന്നാണ്. നമുക്ക് ആവശ്യമുള്ള മരുന്നുകളെക്കുറിച്ച് കൃത്യമായ നിർദ്ദേശങ്ങൾ അവർ തരുന്നുണ്ട്. നല്ല മരുന്നുകൾ ആഗ്രഹിക്കുന്നവർക്ക് ഇത് നല്ലൊരു കടയാണ്.'
         },
-        initial: 'S',
+        initial: 'm',
         color: '#E3F2FD'
     },
     {
-        name: 'Abdul Rasheed T.',
-        rating: 4,
-        date: { en: '4 months ago', ml: '4 മാസം മുമ്പ്' },
-        text: {
-            en: 'Good collection of traditional herbal medicines. They grind the herbs fresh and store in glass jars. Prices are very reasonable compared to other shops. Nice experience overall.',
-            ml: 'പരമ്പരാഗത പച്ചമരുന്നുകളുടെ നല്ല ശേഖരം. മരുന്നുകൾ പുതുതായി പൊടിച്ച് ഗ്ലാസ് ജാറുകളിൽ സൂക്ഷിക്കുന്നു. മറ്റ് കടകളെ അപേക്ഷിച്ച് വില വളരെ ന്യായമാണ്.'
-        },
-        initial: 'A',
-        color: '#FCE4EC'
-    },
-    {
-        name: 'Lakshmi Devi R.',
+        name: 'DigiBayt',
         rating: 5,
         date: { en: '2 weeks ago', ml: '2 ആഴ്ച മുമ്പ്' },
         text: {
-            en: 'My family has been visiting Rahath Ayurvedic for over 2 years now. The quality has been consistently good. They take time to explain each herb and its benefits. A gem in Mannarkkad!',
-            ml: 'എന്റെ കുടുംബം 2 വർഷത്തിലധികമായി റാഹത്ത് ആയുർവേദിക് സന്ദർശിക്കുന്നു. ഗുണനിലവാരം എല്ലായ്പ്പോഴും മികച്ചതാണ്. ഓരോ മരുന്നും അതിന്റെ ഗുണങ്ങളും വിശദീകരിക്കാൻ അവർ സമയമെടുക്കുന്നു.'
+            en: 'This Ayurvedic medicine shop near Hospital Junction, Mannarkkad is a great option for those seeking traditional treatment guidance or medicines.',
+            ml: 'മണ്ണാർക്കാട് ആശുപത്രിപ്പടിയിലെ ഈ ആയുർവേദ മരുന്ന് ഷോപ്പ് നല്ല പാരമ്പര്യ ചികിത്സാ നിർദ്ദേശങ്ങളോ മരുന്നോ ആഗ്രഹിക്കുന്നവർക്ക് നല്ലൊരു ഓപ്ഷൻ ആണ്.'
         },
-        initial: 'L',
+        initial: 'D',
+        color: '#FCE4EC'
+    },
+    {
+        name: 'Muhammed Mishab',
+        rating: 5,
+        date: { en: 'Just now', ml: 'ഇപ്പോൾ' },
+        text: {
+            en: 'My family has been visiting Rahath Ayurvedic for over 2 years now. The quality has been consistently good. They take time to explain each herb and its benefits. A gem in Mannarkkad!',
+            ml: 'എന്റെ കുടുംബം 2 വർഷത്തിലധികമായി റാഹത്ത് ആയുർവേദിക് സന്ദർശിക്കുന്നു. ഗുണനിലവാരം എല്ലായ്പ്പോഴും മികച്ചതാണ്. ഓരോ മരുന്നും അതിന്റെ ഗുണങ്ങളും വിശദീകരിക്കാൻ അവർ സമയമെടുക്കുന്നു. മണ്ണാർക്കാട്ടിലെ ഒരു മുതൽക്കൂട്ട്!'
+        },
+        initial: 'M',
         color: '#F3E5F5'
     }
 ];
@@ -119,9 +119,9 @@ export default function GoogleReviews() {
                 </div>
 
                 <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                    gap: '24px',
+                    columnCount: 'auto',
+                    columnWidth: '280px',
+                    columnGap: '24px',
                     marginBottom: '48px'
                 }}>
                     {reviews.map((review, index) => (
@@ -129,6 +129,9 @@ export default function GoogleReviews() {
                             key={index}
                             className="card"
                             style={{
+                                breakInside: 'avoid',
+                                pageBreakInside: 'avoid',
+                                marginBottom: '24px',
                                 padding: 'clamp(20px, 5vw, 28px)',
                                 display: 'flex',
                                 flexDirection: 'column',
@@ -175,7 +178,7 @@ export default function GoogleReviews() {
 
                 <div className="text-center">
                     <a
-                        href="https://maps.app.goo.gl/93KHWLBe3u7FNaYX9"
+                        href="https://www.google.com/maps/place/Rahath+Ayurvedic/@10.9947286,76.4625703,17z/data=!4m8!3m7!1s0x3ba87f1c78b8901f:0x914bc46287362b08!8m2!3d10.9947286!4d76.4651452!9m1!1b1!16s%2Fg%2F11z0h5blll?entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-secondary"
