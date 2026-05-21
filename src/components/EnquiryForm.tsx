@@ -24,12 +24,12 @@ export default function EnquiryForm() {
         setIsSubmitting(true);
 
         // Format form data into WhatsApp message
-        const waText = `🌿 *New Enquiry — Rahath Ayurvedic*
+        const waText = `*New Enquiry — Rahath Ayurvedic*
 
-👤 *Name:* ${formData.name}
-📞 *Phone:* ${formData.phone}
-🩺 *Concern:* ${formData.concern}
-💬 *Message:* ${formData.message || 'N/A'}`;
+*Name:* ${formData.name}
+*Phone:* ${formData.phone}
+*Concern:* ${formData.concern}
+*Message:* ${formData.message || 'N/A'}`;
 
         const waUrl = `https://wa.me/919605424292?text=${encodeURIComponent(waText)}`;
 
