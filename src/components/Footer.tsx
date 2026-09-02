@@ -75,9 +75,13 @@ export default function Footer() {
 
                 <div style={{
                     borderTop: '1px solid rgba(255,255,255,0.1)',
-                    paddingTop: '30px', textAlign: 'center', fontSize: '0.9rem', opacity: 0.6
+                    paddingTop: '30px', textAlign: 'center', fontSize: '0.9rem',
+                    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px'
                 }}>
-                    <p>© {new Date().getFullYear()} {language === 'ml' ? 'റാഹത്ത് ആയുർവേദിക്' : 'Rahath Ayurvedic'}. {t.footer.all_rights}</p>
+                    <p style={{ opacity: 0.7 }}>© {new Date().getFullYear()} {language === 'ml' ? 'റാഹത്ത് ആയുർവേദിക്' : 'Rahath Ayurvedic'}. {t.footer.all_rights}</p>
+                    <a href="https://eclyze-website.vercel.app" style={{ color: 'var(--white)', opacity: 0.5, textDecoration: 'none', fontSize: '0.85rem' }}>
+                        Website by Eclyze
+                    </a>
                 </div>
             </div>
         </footer>
